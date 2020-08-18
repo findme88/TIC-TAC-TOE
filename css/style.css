@@ -1,0 +1,75 @@
+h1 {
+  font-size: large;
+  text-align: center;
+  margin-bottom: 50px;
+  margin-top: 30px;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#area {
+  width: 600px;
+  height: 600px;
+  background-color: blanchedalmond;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.box {
+  width: 200px;
+  height: 200px;
+  border: 2px solid black;
+  box-sizing: border-box;
+  font-size: 100px;
+  color: rgb(255, 0, 64);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-result {
+  width: 100%;
+  height: 100%;
+  /* position: relative; */
+  top: 0;
+  left: 0;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, .7);
+}
+
+.modal-window {
+    width: 250px;
+    height: 250px;
+    border: 1px solid olive;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-close {
+    width: 150px;
+    height: 30px;
+    background-color: orangered;
+    color: rgb(39, 24, 10);
+    text-align: center;
+    cursor: pointer;
+}
