@@ -1,6 +1,10 @@
-const area = document.getElementById("area");
+const area = document.querySelector("#area");
 let move = 0;
 let result = "";
+const content = document.querySelector(".content");
+const modalResult = document.querySelector(".modal-result");
+const overlay = document.querySelector(".overlay");
+const btnClose = document.querySelector(".btn-close");
 
 area.addEventListener("click", (e) => {
   if ((e.target.className = "box")) {
@@ -11,7 +15,7 @@ area.addEventListener("click", (e) => {
 });
 
 const check = () => {
-  const boxes = document.getElementsByClassName("box");
+  const boxes = document.querySelectorAll(".box");
   const arr = [
     [0, 1, 2],
     [3, 4, 5],
@@ -29,19 +33,29 @@ const check = () => {
       boxes[arr[i][1]].innerHTML == "X" &&
       boxes[arr[i][2]].innerHTML == "X"
     ) {
-      result = "crosses";
+      result = "CROSSES";
       resultOutput(result);
     } else if (
       boxes[arr[i][0]].innerHTML == "0" &&
       boxes[arr[i][1]].innerHTML == "0" &&
       boxes[arr[i][2]].innerHTML == "0"
     ) {
-      result = "zeros";
+      result = "ZEROS";
       resultOutput(result);
     }
   }
 };
 
 const resultOutput = (winner) => {
-  console.log(winner);
+  content.innerHTML = `${winner} WINS`;
+  modalResult.style.display = 'block'
+  
 };
+
+const closeMadal = () => {
+    modalResult.style.display = 'none';
+    location.reload();
+}
+
+overlay.addEventListener('click', closeMadal)
+btnClose.addEventListener('click', closeMadal)
