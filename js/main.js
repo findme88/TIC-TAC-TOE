@@ -1,6 +1,7 @@
 const area = document.querySelector("#area");
 let move = 0;
 let result = "";
+let count = 0;
 const content = document.querySelector(".content");
 const modalResult = document.querySelector(".modal-result");
 const overlay = document.querySelector(".overlay");
@@ -11,6 +12,7 @@ area.addEventListener("click", (e) => {
     move % 2 === 0 ? (e.target.innerHTML = "X") : (e.target.innerHTML = "0");
     move++;
     check();
+    
   }
 });
 
@@ -42,20 +44,23 @@ const check = () => {
     ) {
       result = "ZEROS";
       resultOutput(result);
+    } else if (move === 9) {
+        content.innerHTML = `DRAW`; 
+        modalResult.style.display = "block";
+        
     }
   }
 };
 
 const resultOutput = (winner) => {
   content.innerHTML = `${winner} WINS`;
-  modalResult.style.display = 'block'
-  
+  modalResult.style.display = "block";
 };
 
 const closeMadal = () => {
-    modalResult.style.display = 'none';
-    location.reload();
-}
+  modalResult.style.display = "none";
+  location.reload();
+};
 
-overlay.addEventListener('click', closeMadal)
-btnClose.addEventListener('click', closeMadal)
+overlay.addEventListener("click", closeMadal);
+btnClose.addEventListener("click", closeMadal);
