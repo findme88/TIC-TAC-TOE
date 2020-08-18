@@ -13,13 +13,16 @@ h1 {
   align-items: center;
 }
 
-#area {
+.area {
   width: 600px;
   height: 600px;
   background-color: blanchedalmond;
   display: flex;
   flex-wrap: wrap;
+  
+  
 }
+  
 
 .box {
   width: 200px;
@@ -31,7 +34,22 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
+
 }
+
+
+@media (max-width: 767px) {
+  .area {
+    width: 300px;
+    height: 300px;
+    
+  }
+  .box {
+    width: 100px;
+    height: 100px;
+  }
+    
+  }
 
 .modal-result {
   width: 100%;

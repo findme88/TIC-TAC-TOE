@@ -1,4 +1,4 @@
-const area = document.querySelector("#area");
+const area = document.querySelector(".area");
 let move = 0;
 let result = "";
 let count = 0;
